@@ -31,15 +31,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://임성은.com",
+    url: "https://election-landing-page.vercel.app",
     siteName: "임성은 - 경상남도 방사선사 협회 회장 후보",
     title: "임성은 - 경상남도 방사선사 협회 회장 후보",
     description: "경상남도 방사선사 협회 회장 선거 후보 임성은입니다. 방사선사들의 권익 향상과 전문성 강화를 위해 최선을 다하겠습니다.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://election-landing-page.vercel.app/og-image.png",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "임성은 - 경상남도 방사선사 협회 회장 후보"
       }
     ]
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "임성은 - 경상남도 방사선사 협회 회장 후보",
     description: "경상남도 방사선사 협회 회장 선거 후보 임성은입니다. 방사선사들의 권익 향상과 전문성 강화를 위해 최선을 다하겠습니다.",
-    images: ["/twitter-image.jpg"],
-    creator: "@임성은"
+    images: ["https://election-landing-page.vercel.app/og-image.png"],
+    creator: "@imseong_eun"
   },
   robots: {
     index: true,
