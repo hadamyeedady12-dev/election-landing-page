@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Selection color - monochrome */
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* Scrollbar - minimal */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Image grayscale hover effect */
+.img-hover-color {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.img-hover-color:hover {
+  filter: grayscale(0%);
+}
+
+/* Number hover animation */
+.number-animate {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.group:hover .number-animate {
+  color: #000;
+  transform: translateX(4px);
+}
+
+/* Text reveal animation */
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.text-reveal {
+  animation: reveal 0.8s ease forwards;
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Link hover underline effect */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Horizontal scroll container */
+.scroll-x {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
+/* Text gradient - for special emphasis */
+.text-gradient {
+  background: linear-gradient(135deg, #000 0%, #666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Blend mode header */
+.blend-header {
+  mix-blend-mode: difference;
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e5e7eb 20%, #e5e7eb 80%, transparent);
+}
+
+/* Large number background */
+.bg-number {
+  position: absolute;
+  font-size: 25vw;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.02);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+/* Responsive font sizes using clamp */
+.text-responsive-xl {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+}
+
+.text-responsive-lg {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.text-responsive-md {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+}
